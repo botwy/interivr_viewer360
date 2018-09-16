@@ -4,3 +4,7 @@
 *.js.meta
 node_modules/
 build/
+package-lock.json
+README.md
+.idea
+__tests__/

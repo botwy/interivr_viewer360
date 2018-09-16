@@ -18,20 +18,22 @@ export default class ModelView extends React.Component {
 console.log("model")
         return (
             <View>
-                <AmbientLight intensity={10.0} color={'#ffffff'} />
+                <AmbientLight intensity={1.0} color={'#ffffff'} />
                 <PointLight
                     intensity={1}
                     style={{transform: [{translate: [0, 4, -1]}]}}
                 />
                 <Entity
                     style={
-                        {transform: [{rotateZ: 0},
-                        {rotateY: 90},
-                        {rotateX: 0},
-                        {scale: 2},
-                        ]}}
+                        {transform: [
+                          {rotateZ: 0},
+                          {rotateY: 0},
+                          {rotateX: -90},
+                          {scale: 1},
+                          ]
+                        }}
                    // source={{gltf2: source.root.url}}
-                    source={{obj: "http://13.rsumka.z8.ru/ivr/ivr_exchange.php", mtl: asset("flat.mtl")}}
+                    source={{obj: "http://13.rsumka.z8.ru/ivr/ivr_exchange.php", mtl: asset("cube.mtl")}}
                 />
             </View>
         );

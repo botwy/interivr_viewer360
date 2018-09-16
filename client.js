@@ -27,24 +27,10 @@ function init(bundle, parent, options = {}) {
     fullScreen: true,
     ...options,
   });
- // teleportModule.setCamera(r360.controls.cameraControllers);
- /* r360.renderToSurface(
-    r360.createRoot('SlideShow', {
-      photos: [
-        {uri: './static_assets/sky_box.jpg', title: 'YIT flat', format: '2D'},
-        // Add your own 180 / 360 photos to this array,
-        // with an associated title and format
-      ],
-    }),
-    /!*  r360.createRoot("custom360", {
-          /!* initial props *!/
-      }),*!/
-    r360.getDefaultSurface(),
-  );*/
 
     r360.renderToLocation(
         r360.createRoot('ModelView'),
-        new Location([-10, -3.5, 3], [0, -0.707, 0, 0.707]),
+        new Location([0, -1.65, 0]),
     );
 
     // Load the initial environment
