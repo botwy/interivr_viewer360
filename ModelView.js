@@ -15,7 +15,6 @@ import PointLight from 'PointLight';
 export default class ModelView extends React.Component {
 
     render() {
-console.log("model")
         return (
             <View>
                 <AmbientLight intensity={1.0} color={'#ffffff'} />
