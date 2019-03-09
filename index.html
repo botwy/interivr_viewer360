@@ -8,9 +8,13 @@
     <div id="container"></div>
     <script src="./client.bundle?platform=vr"></script>
     <script>
+      const urlParamString = window.location.search;
+
       React360.init(
         'index.bundle?platform=vr&dev=true',
-        document.getElementById('container')
+        document.getElementById('container'),
+          undefined,
+          urlParamString
       );
     </script>
   </body>

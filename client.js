@@ -20,7 +20,7 @@ class TeleportModule extends Module {
     }
 }
 
-function init(bundle, parent, options = {}) {
+function init(bundle, parent, options = {}, urlParamString = '') {
   const teleportModule = new TeleportModule();
   const r360 = new ReactInstance(bundle, parent, {
     nativeModules: [ teleportModule ],
@@ -28,8 +28,19 @@ function init(bundle, parent, options = {}) {
     ...options,
   });
 
+  const urlParams = urlParamString.slice(1).split('&');
+  const modelId = urlParams
+      .map(param => {
+      const entry = param.split('=');
+
+      if (entry[0] === 'modelId') {
+          return entry[1];
+      }
+  })
+      .find(modelId => modelId);
+
     r360.renderToLocation(
-        r360.createRoot('ModelView'),
+        r360.createRoot('ModelView', { modelId }),
         new Location([0, -1.65, 0]),
     );
 

@@ -27,12 +27,14 @@ export default class ModelView extends React.Component {
                         {transform: [
                           {rotateZ: 0},
                           {rotateY: 0},
-                          {rotateX: -90},
+                          {rotateX: 0},
                           {scale: 1},
                           ]
                         }}
-                   // source={{gltf2: source.root.url}}
-                    source={{obj: "http://13.rsumka.z8.ru/ivr/ivr_exchange.php", mtl: asset("cube.mtl")}}
+                    source={{
+                        obj: `/account/public/modelFormatObj?modelId=${this.props.modelId}`,
+                        mtl: asset("cube.mtl"),
+                    }}
                 />
             </View>
         );
